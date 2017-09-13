@@ -6,6 +6,7 @@
 package security.controllers;
 
 import erp.view.CustomerView;
+import erp.view.MasterTableView;
 import erp.view.ProviderView;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -84,6 +85,8 @@ public class AppController implements ActionListener {
             customerAction(moduleRights, user);
         } else if (moduleId == 8){
             providerAction(moduleRights, user);
+        } else if (moduleId == 9){
+            masterTableAction(moduleRights, user);
         } else {
             JOptionPane.showMessageDialog(view, "Module not identified", "Unkown", JOptionPane.ERROR_MESSAGE);
         }
@@ -140,6 +143,12 @@ public class AppController implements ActionListener {
     
     private void providerAction(UserRight rights, User user) {
         ProviderView frm = new ProviderView(user, rights);
+        view.addFrame(frm);
+        frm.setVisible(true);
+    }
+    
+    private void masterTableAction(UserRight rights, User user) {
+        MasterTableView frm = new MasterTableView(user, rights);
         view.addFrame(frm);
         frm.setVisible(true);
     }

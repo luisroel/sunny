@@ -6,8 +6,9 @@ CREATE TABLE `tberp_submaterial` (
   `MinumumStock`    int(20) DEFAULT NULL,
   `MaximumStock`	int(20) DEFAULT NULL,
   `MeasureId`		bigint(20) DEFAULT NULL,
-  
+  `CategoryId` bigint(20) DEFAULT NULL,
   
   PRIMARY KEY (`SubmaterailId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
+	
