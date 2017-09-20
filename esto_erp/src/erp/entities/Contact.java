@@ -6,7 +6,7 @@ package erp.entities;
  * @author lespinoza
  */
 public class Contact {
-    private Long contactId;
+    private Long id;
     private String suffix;
     private String title;
     private String firstName;
@@ -18,8 +18,8 @@ public class Contact {
     private String homePhone;
     private String mobilPhone;
 
-    public Contact(Long contactId, String suffix, String title, String firstName, String middleName, String lastName, String surname, String email, String workPhone, String homePhone, String mobilPhone) {
-        this.contactId = contactId;
+    public Contact(Long id, String suffix, String title, String firstName, String middleName, String lastName, String surname, String email, String workPhone, String homePhone, String mobilPhone) {
+        this.id = id;
         this.suffix = suffix;
         this.title = title;
         this.firstName = firstName;
@@ -112,12 +112,12 @@ public class Contact {
         this.mobilPhone = mobilPhone;
     }
 
-    public Long getContactId() {
-        return contactId;
+    public Long getId() {
+        return id;
     }
 
-    public void setContactId(Long contactId) {
-        this.contactId = contactId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

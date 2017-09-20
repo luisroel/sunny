@@ -5,9 +5,11 @@
  */
 package security.controllers;
 
-import erp.view.CustomerView;
-import erp.view.MasterTableView;
-import erp.view.ProviderView;
+import erp.container.CustomerContainer;
+import erp.container.MasterContainer;
+import erp.container.ProductContainer;
+import erp.container.ProviderContainer;
+import erp.container.SubmaterialContainer;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -87,6 +89,10 @@ public class AppController implements ActionListener {
             providerAction(moduleRights, user);
         } else if (moduleId == 9){
             masterTableAction(moduleRights, user);
+        } else if (moduleId == 10){
+            submaterialAction(moduleRights, user);
+        } else if (moduleId == 11){
+            productAction(moduleRights, user);
         } else {
             JOptionPane.showMessageDialog(view, "Module not identified", "Unkown", JOptionPane.ERROR_MESSAGE);
         }
@@ -136,19 +142,31 @@ public class AppController implements ActionListener {
     }
 
     private void customerAction(UserRight rights, User user) {
-        CustomerView frm = new CustomerView(user, rights);
+        CustomerContainer frm = new CustomerContainer(user, rights);
         view.addFrame(frm);
         frm.setVisible(true);
     }
     
     private void providerAction(UserRight rights, User user) {
-        ProviderView frm = new ProviderView(user, rights);
+        ProviderContainer frm = new ProviderContainer(user, rights);
         view.addFrame(frm);
         frm.setVisible(true);
     }
     
     private void masterTableAction(UserRight rights, User user) {
-        MasterTableView frm = new MasterTableView(user, rights);
+        MasterContainer frm = new MasterContainer(user, rights);
+        view.addFrame(frm);
+        frm.setVisible(true);
+    }
+    
+    private void submaterialAction(UserRight rights, User user) {
+        SubmaterialContainer frm = new SubmaterialContainer(user, rights);
+        view.addFrame(frm);
+        frm.setVisible(true);
+    }
+    
+    private void productAction(UserRight rights, User user) {
+        ProductContainer frm = new ProductContainer(user, rights);
         view.addFrame(frm);
         frm.setVisible(true);
     }

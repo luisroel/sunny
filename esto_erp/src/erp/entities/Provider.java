@@ -12,7 +12,7 @@ package erp.entities;
  * @author lespinoza
  */
 public class Provider {
-    private Long providerId;
+    private Long id;
     private String code;
     private String name;
     private String phone1;
@@ -22,8 +22,8 @@ public class Provider {
     private String web;
     private String notes;
 
-    public Provider(Long providerId, String code, String name, String phone1, String phone2, Address address, Contact contact, String web, String notes) {
-        this.providerId = providerId;
+    public Provider(Long id, String code, String name, String phone1, String phone2, Address address, Contact contact, String web, String notes) {
+        this.id = id;
         this.code = code;
         this.name = name;
         this.phone1 = phone1;
@@ -34,12 +34,12 @@ public class Provider {
         this.notes = notes;
     }
 
-    public Long getProviderId() {
-        return providerId;
+    public Long getId() {
+        return id;
     }
 
-    public void setProviderId(Long providerId) {
-        this.providerId = providerId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCode() {
@@ -110,5 +110,4 @@ public class Provider {
     public String toString() {
         return this.name;
     }
-    
 }

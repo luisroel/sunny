@@ -10,28 +10,28 @@ package erp.entities;
  * @author lespinoza
  */
 public class Master {
-    private Long categoryId;
+    private Long id;
     private String code;
     private String description;
 
     /**
      *
-     * @param categoryId
+     * @param id
      * @param code
      * @param description
      */
-    public Master(Long categoryId, String code, String description) {
-        this.categoryId = categoryId;
+    public Master(Long id, String code, String description) {
+        this.id = id;
         this.code = code;
         this.description = description;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCode() {
@@ -52,8 +52,6 @@ public class Master {
 
     @Override
     public String toString() {
-        return description; //To change body of generated methods, choose Tools | Templates.
+        return this.code; //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
 }

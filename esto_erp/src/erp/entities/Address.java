@@ -10,7 +10,7 @@ package erp.entities;
  * @author lespinoza
  */
 public class Address {
-    private Long addressId;
+    private Long id;
     private String line1;
     private String line2;
     private String line3;
@@ -19,8 +19,8 @@ public class Address {
     private String zipcode;
     private Country country;
 
-    public Address(Long addressId, String line1, String line2, String line3, String zipcode, String City, String state, Country country) {
-        this.addressId = addressId;
+    public Address(Long id, String line1, String line2, String line3, String zipcode, String City, String state, Country country) {
+        this.id = id;
         this.line1 = line1;
         this.line2 = line2;
         this.line3 = line3;
@@ -30,12 +30,12 @@ public class Address {
         this.country = country;
     }
     
-    public Long getAddressId() {
-        return addressId;
+    public Long getId() {
+        return id;
     }
 
-    public void setAddressId(Long addressId) {
-        this.addressId = addressId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLine1() {

@@ -10,28 +10,28 @@ package erp.entities;
  * @author lespinoza
  */
 public class Country {
-    private Long countryId;
+    private Long id;
     private String code;
     private String countryName;
 
     /**
      *
-     * @param countryId
+     * @param id
      * @param code
      * @param countryName
      */
-    public Country(Long countryId, String code, String countryName) {
-        this.countryId = countryId;
+    public Country(Long id, String code, String countryName) {
+        this.id = id;
         this.code = code;
         this.countryName = countryName;
     }
 
-    public Long getCountryId() {
-        return countryId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCountryId(Long countryId) {
-        this.countryId = countryId;
+    public void setId(Long countryId) {
+        this.id = countryId;
     }
 
     public String getCode() {
