@@ -38,8 +38,6 @@ public class SubmaterialContainer extends javax.swing.JInternalFrame {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
         pnlCatalog = new javax.swing.JPanel();
-        pnlProviders = new javax.swing.JPanel();
-        pnlCosts = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtCode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -63,32 +61,6 @@ public class SubmaterialContainer extends javax.swing.JInternalFrame {
         );
 
         jTabbedPane2.addTab("Catalog", pnlCatalog);
-
-        javax.swing.GroupLayout pnlProvidersLayout = new javax.swing.GroupLayout(pnlProviders);
-        pnlProviders.setLayout(pnlProvidersLayout);
-        pnlProvidersLayout.setHorizontalGroup(
-            pnlProvidersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        pnlProvidersLayout.setVerticalGroup(
-            pnlProvidersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Providers", pnlProviders);
-
-        javax.swing.GroupLayout pnlCostsLayout = new javax.swing.GroupLayout(pnlCosts);
-        pnlCosts.setLayout(pnlCostsLayout);
-        pnlCostsLayout.setHorizontalGroup(
-            pnlCostsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        pnlCostsLayout.setVerticalGroup(
-            pnlCostsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Cost", pnlCosts);
 
         jLabel1.setText("Code:");
 
@@ -139,8 +111,6 @@ public class SubmaterialContainer extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel pnlCatalog;
-    private javax.swing.JPanel pnlCosts;
-    private javax.swing.JPanel pnlProviders;
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtDescription;
     // End of variables declaration//GEN-END:variables

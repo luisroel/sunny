@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import security.database.DBConnection;
-import security.models.MenuModel;
 
 /**
  *
@@ -68,14 +67,14 @@ public class AddressModel {
                 list.add(record);
             }
         } catch (Exception ex) {
-            Logger.getLogger(MenuModel.class.getName()).log(
+            Logger.getLogger(AddressModel.class.getName()).log(
                     Level.SEVERE, null, ex);
         } finally {
             if (rs != null) {
                 try {
                     rs.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(MenuModel.class.getName()).log(
+                    Logger.getLogger(AddressModel.class.getName()).log(
                             Level.WARNING, null, ex);
                 }
             }
@@ -83,7 +82,7 @@ public class AddressModel {
                 try {
                     cstmt.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(MenuModel.class.getName()).log(
+                    Logger.getLogger(AddressModel.class.getName()).log(
                             Level.WARNING, null, ex);
                 }
             }
@@ -112,14 +111,14 @@ public class AddressModel {
             cstmt.execute();
             msg = cstmt.getString("Msg_p");
         } catch (Exception ex) {
-            Logger.getLogger(MenuModel.class.getName()).log(
+            Logger.getLogger(AddressModel.class.getName()).log(
                     Level.SEVERE, null, ex);
         } finally {
             if (cstmt != null) {
                 try {
                     cstmt.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(MenuModel.class.getName()).log(
+                    Logger.getLogger(AddressModel.class.getName()).log(
                             Level.WARNING, null, ex);
                 }
             }
@@ -147,14 +146,14 @@ public class AddressModel {
             cstmt.execute();
             msg = cstmt.getString("Msg_p");
         } catch (Exception ex) {
-            Logger.getLogger(MenuModel.class.getName()).log(
+            Logger.getLogger(AddressModel.class.getName()).log(
                     Level.SEVERE, null, ex);
         } finally {
             if (cstmt != null) {
                 try {
                     cstmt.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(MenuModel.class.getName()).log(
+                    Logger.getLogger(AddressModel.class.getName()).log(
                             Level.WARNING, null, ex);
                 }
             }
@@ -175,14 +174,14 @@ public class AddressModel {
             cstmt.execute();
             msg = cstmt.getString("Msg_p");
         } catch (Exception ex) {
-            Logger.getLogger(MenuModel.class.getName()).log(
+            Logger.getLogger(AddressModel.class.getName()).log(
                     Level.SEVERE, null, ex);
         } finally {
             if (cstmt != null) {
                 try {
                     cstmt.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(MenuModel.class.getName()).log(
+                    Logger.getLogger(AddressModel.class.getName()).log(
                             Level.WARNING, null, ex);
                 }
             }
