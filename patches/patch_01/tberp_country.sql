@@ -10,4 +10,4 @@ TRUNCATE TABLE `tberp_country`;
 --
 -- Create country data
 --
-INSERT INTO tberp_country (`Code`, `CountryName`) VALUES ('MEX', 'México'), ('USA', 'EEUA');
+INSERT INTO tberp_country (`Code`, `CountryName`) VALUES ('MEX', 'Mexico'), ('USA', 'EEUA');

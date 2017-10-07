@@ -68,6 +68,7 @@ do_update() {
 # Default varables values
 DB_USER_NAME="root"
 DB_USER_PASS="s3cr3t"
+#DB_USER_PASS="pa$$w0rd"
 DB_NAME="sunny_prod_db"
 SERVER_NAME="localhost"
 

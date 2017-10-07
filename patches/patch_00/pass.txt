@@ -1,1 +1,1 @@
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('pa$$w0rd');
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('s3cr3t');
