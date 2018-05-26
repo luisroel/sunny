@@ -17,6 +17,7 @@ public class MasterContainer extends javax.swing.JInternalFrame {
     private MasterView productCategoriesView;
     private MasterView submaterialCategoriesView;
     private MasterView measurementUnitsView;
+    private MasterView documentsView;
     
     /**
      * Creates new form CustomerView2
@@ -41,6 +42,7 @@ public class MasterContainer extends javax.swing.JInternalFrame {
         pnlProducts = new javax.swing.JPanel();
         pnlSubmaterials = new javax.swing.JPanel();
         pnlMeasurementUnits = new javax.swing.JPanel();
+        pnlDocuments = new javax.swing.JPanel();
 
         setClosable(true);
         setIconifiable(true);
@@ -87,7 +89,20 @@ public class MasterContainer extends javax.swing.JInternalFrame {
             .addGap(0, 453, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Measurement Units", pnlMeasurementUnits);
+        jTabbedPane1.addTab("MOU", pnlMeasurementUnits);
+
+        javax.swing.GroupLayout pnlDocumentsLayout = new javax.swing.GroupLayout(pnlDocuments);
+        pnlDocuments.setLayout(pnlDocumentsLayout);
+        pnlDocumentsLayout.setHorizontalGroup(
+            pnlDocumentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+        );
+        pnlDocumentsLayout.setVerticalGroup(
+            pnlDocumentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 453, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Documents", pnlDocuments);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,7 +110,7 @@ public class MasterContainer extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -112,25 +127,33 @@ public class MasterContainer extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel pnlDocuments;
     private javax.swing.JPanel pnlMeasurementUnits;
     private javax.swing.JPanel pnlProducts;
     private javax.swing.JPanel pnlSubmaterials;
     // End of variables declaration//GEN-END:variables
 
     private void localInit(User user, UserRight right) {
-                
+
        this.productCategoriesView = new MasterView(user, right, 0);         // products categories
        this.pnlProducts.setLayout(new java.awt.BorderLayout());
        this.pnlProducts.add(productCategoriesView);
        this.pnlProducts.revalidate();
+       
        this.submaterialCategoriesView = new MasterView(user, right, 1);     // submaterial categories
        this.pnlSubmaterials.setLayout(new java.awt.BorderLayout());
        this.pnlSubmaterials.add(submaterialCategoriesView);
        this.pnlSubmaterials.revalidate();
+       
        this.measurementUnitsView = new MasterView(user, right, 2);          // measurement units
        this.pnlMeasurementUnits.setLayout(new java.awt.BorderLayout());
        this.pnlMeasurementUnits.add(measurementUnitsView);
        this.pnlMeasurementUnits.revalidate();
+       
+       this.documentsView = new MasterView(user, right, 3);                 // Documents names
+       this.pnlDocuments.setLayout(new java.awt.BorderLayout());
+       this.pnlDocuments.add(documentsView);
+       this.pnlDocuments.revalidate();
        
     }
 }

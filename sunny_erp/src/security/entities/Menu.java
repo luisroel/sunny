@@ -26,7 +26,7 @@ public class Menu {
         this.track = track;
     }
     
-    public long getId(){
+    public long getId() {
         return this.Id;
     }
     

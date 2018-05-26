@@ -7,10 +7,12 @@ package erp.container;
 
 import erp.controllers.AddressController;
 import erp.controllers.ContactController;
+import erp.controllers.DocumentController;
 import erp.entities.Customer;
 import erp.views.AddressView;
 import erp.views.ContactView;
 import erp.views.CustomerView;
+import erp.views.DocumentView;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import security.entities.User;
@@ -22,8 +24,9 @@ import security.entities.UserRight;
  */
 public class CustomerContainer extends javax.swing.JInternalFrame implements ListSelectionListener{
     private CustomerView customerView;
-    private ContactView contactView;
-    private AddressView addressView;
+    private ContactView contactsView;
+    private AddressView addressesView;
+    private DocumentView documentsView;
     
     /**
      * Creates new form CustomerView2
@@ -48,6 +51,7 @@ public class CustomerContainer extends javax.swing.JInternalFrame implements Lis
         pnlCustomer = new javax.swing.JPanel();
         pnlAddress = new javax.swing.JPanel();
         pnlContacts = new javax.swing.JPanel();
+        pnlDocuments = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtCode = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
@@ -97,6 +101,19 @@ public class CustomerContainer extends javax.swing.JInternalFrame implements Lis
         );
 
         jTabbedPane2.addTab("Contacts", pnlContacts);
+
+        javax.swing.GroupLayout pnlDocumentsLayout = new javax.swing.GroupLayout(pnlDocuments);
+        pnlDocuments.setLayout(pnlDocumentsLayout);
+        pnlDocumentsLayout.setHorizontalGroup(
+            pnlDocumentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+        pnlDocumentsLayout.setVerticalGroup(
+            pnlDocumentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Documents", pnlDocuments);
 
         jLabel1.setText("Code:");
 
@@ -149,6 +166,7 @@ public class CustomerContainer extends javax.swing.JInternalFrame implements Lis
     private javax.swing.JPanel pnlAddress;
     private javax.swing.JPanel pnlContacts;
     private javax.swing.JPanel pnlCustomer;
+    private javax.swing.JPanel pnlDocuments;
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
@@ -164,22 +182,28 @@ public class CustomerContainer extends javax.swing.JInternalFrame implements Lis
         if (selectedCustomer == null){
             txtCode.setText("");
             txtName.setText("");
-            this.addressView = new AddressView(user, right, new Long(-1), 0);
-            this.contactView = new ContactView(user, right, new Long(-1), 0);
+            this.addressesView = new AddressView(user, right, new Long(-1), 0);
+            this.contactsView = new ContactView(user, right, new Long(-1), 0);
+            this.documentsView = new DocumentView(user, right, new Long(-1), 0);
         } else {
             txtCode.setText(selectedCustomer.getCode());
             txtName.setText(selectedCustomer.getName());
-            this.addressView = new AddressView(user, right, selectedCustomer.getId(), 0);
-            this.contactView = new ContactView(user, right, selectedCustomer.getId(), 0);
+            this.addressesView = new AddressView(user, right, selectedCustomer.getId(), 0);
+            this.contactsView = new ContactView(user, right, selectedCustomer.getId(), 0);
+            this.documentsView = new DocumentView(user, right, selectedCustomer.getId(), 0);
         }
         
         this.pnlAddress.setLayout(new java.awt.BorderLayout());
-        this.pnlAddress.add(addressView);
+        this.pnlAddress.add(addressesView);
         this.pnlAddress.revalidate();
         
         this.pnlContacts.setLayout(new java.awt.BorderLayout());
-        this.pnlContacts.add(contactView);
+        this.pnlContacts.add(contactsView);
         this.pnlContacts.revalidate();
+
+        this.pnlDocuments.setLayout(new java.awt.BorderLayout());
+        this.pnlDocuments.add(documentsView);
+        this.pnlDocuments.revalidate();
         
         this.customerView.getController().addSelectionListener(this);
     }
@@ -188,24 +212,30 @@ public class CustomerContainer extends javax.swing.JInternalFrame implements Lis
     public void valueChanged(ListSelectionEvent lse) {
         Customer selectedCustomer = customerView.getSelectedItem();
         
-        AddressController addressController;
-        addressController = addressView.getController();
+        AddressController addressesController;
+        addressesController = addressesView.getController();
         
-        ContactController contactController;
-        contactController = contactView.getController();
+        ContactController contactsController;
+        contactsController = contactsView.getController();
+        
+        DocumentController documentsController;
+        documentsController = documentsView.getController();
         
         if (selectedCustomer == null) {
             txtCode.setText("");
             txtName.setText("");
-            addressController.setItem(new Long(-1));
-            contactController.setItem(new Long(-1));
+            addressesController.setItem(new Long(-1));
+            contactsController.setItem(new Long(-1));
+            documentsController.setItem(new Long(-1));
         } else {
             txtCode.setText(selectedCustomer.getCode());
             txtName.setText(selectedCustomer.getName());
-            addressController.setItem(selectedCustomer.getId());
-            contactController.setItem(selectedCustomer.getId());
+            addressesController.setItem(selectedCustomer.getId());
+            contactsController.setItem(selectedCustomer.getId());
+            documentsController.setItem(selectedCustomer.getId());
         }
-        addressController.loadData();
-        contactController.loadData();
+        addressesController.loadData();
+        contactsController.loadData();
+        documentsController.loadData();
     }
 }
